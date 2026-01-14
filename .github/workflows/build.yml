@@ -23,3 +23,8 @@ jobs:
 
     - name: Build (Release)
       run: cmake --build build --config Release
+
+    - name: Verify CRT
+      run: |
+        dumpbin /directives build/**/draco.lib || echo "no draco.lib yet"
+
